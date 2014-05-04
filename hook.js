@@ -7,7 +7,7 @@ gith({
     }).on('all', function(payload) {
 	console.log('received post!');
         if(payload.branch === 'master') {
-            exec('./util/hook.sh', function(error, stdout, stderr){
+            exec('./utils/hook.sh', function(error, stdout, stderr){
 		console.log(stdout);
 		console.log("Finished executing hook.sh");
             });
