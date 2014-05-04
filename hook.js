@@ -1,14 +1,15 @@
 var gith = require("gith").create(9001);
 
-var execFile = require("child_process").execFile;
+var exec = require("child_process").exec;
 
 gith({
-    repo: 'simiopolis/eventful-web'
+    repo: 'Simiopolis/eventful-web'
     }).on('all', function(payload) {
+	console.log('received post!');
         if(payload.branch === 'master') {
-            execFile('/util/test', function(error, stdout, stderr){
-                console.log('exec complete');
+            exec('./util/hook.sh', function(error, stdout, stderr){
+		console.log(stdout);
+		console.log("Finished executing hook.sh");
             });
         }   
-	console.log('received post!');
     });
