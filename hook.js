@@ -10,4 +10,5 @@ gith({
                 console.log('exec complete');
             });
         }   
+	console.log('received post!');
     });
