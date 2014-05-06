@@ -1,10 +1,22 @@
 #!/bin/bash
+echo "Executing auto-deploy"
+echo "======================"
+echo ""
 
-echo Stopping the server.
-forever stop server.js
+echo "Stopping eventful server"
+echo "======================"
+echo ""
+forever stop app.js
 
-echo Updating the repository.
-git pull
+echo "Updating eventful project"
+echo "======================="
+echo ""
+cd /home/ubuntu/eventful-web
+sudo git pull --rebase
 
-echo Restarting the server
-forever start server.js
+echo "Restarting eventful server"
+echo "======================="
+echo ""
+sudp forever start app.js
+
+echo "Finished updating project."
