@@ -1,7 +1,10 @@
 doctype html
-html
+html(lang='en' ng-app)
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/angular/angular.js')
   body
     block content
+    <p>Hello there {{'kevin' + '!' }}</p> 
+    <p>1 + 2 = {{1+2}}</p> 
