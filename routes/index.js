@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('layout', { title: 'Express' });
+  res.render('layout', { title: 'Eventful' });
 };
 
 exports.partial = function(req, res) {

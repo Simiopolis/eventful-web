@@ -3,8 +3,9 @@ var eventfulApp = angular.module('eventfulApp', [
   'eventfulControllers'
 ]);
 
-eventfulApp.config(['$routeProvider', 
-  function($routeProvider) {
+eventfulApp.config(['$routeProvider','$locationProvider', 
+  function($routeProvider, $locationProvider) {
+    //$locationProvider.html5Mode(true);
     $routeProvider.
       when('/home', {
         templateUrl: 'partial/index',
@@ -12,6 +13,10 @@ eventfulApp.config(['$routeProvider',
       }).
       when('/name', {
         templateUrl: 'partial/name',
+        controller: 'PingCtrl'
+      }).
+      when('/contact', {
+        templateUrl: 'partial/contact_us',
         controller: 'PingCtrl'
       }).
       otherwise({
